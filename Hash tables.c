@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 void identify_identical(int values[], int n) {
     int i, j;
     for (i = 0; i < n; i++) {
