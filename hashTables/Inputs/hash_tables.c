@@ -31,5 +31,31 @@ int identical_right(int snow1[], int snow2[],
     }
     return 1;
  }
+ 
+// scan arrays from right to left
+// NOTE: can possibly use %(mod operator) to solve the wrap around problem p.6
+int identical_right(int snow1[], int snow2[], int start) {
+    int offset, snow2_index;
+    for (offset =0; offset < 6; offset++) {
+        snow2_index = start + offset;
+        if (snow2_index >= 6)
+        snow2_index = snow2_index - 6;
+    if (snow1[offset] != snow2[snow2_index])
+        return 0;
+    }
+    return 1;
+ }
 
 // scan arrays from left to right
+int identical_left(int snow1[], int snow2[], int start) {
+    int offset, snow2_index;
+    for (offset =0; offset < 6; offset++) {
+        snow2_index = start + offset;
+        if (snow2_index >= 6)
+        snow2_index = snow2_index +
+         6;
+    if (snow1[offset] != snow2[snow2_index])
+        return 0;
+    }
+    return 1;
+}
